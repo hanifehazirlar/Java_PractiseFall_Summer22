@@ -18,7 +18,7 @@ public class Lambda03_Odev {
     }
     public static int toplaAmele(int i) {
 
-        return 0;
+        return IntStream.rangeClosed(1,i).reduce(Math::addExact).getAsInt();
     }
     //TODO Functional(cincix Programming
     public static int toplaCincix(int x) {
@@ -28,30 +28,31 @@ public class Lambda03_Odev {
     //TODO TASK 02 --> 1'den x'e kadar cift tamsayilari toplayan bir program create ediniz.
     public static int toplaCift(int x) {
 
-        return 0;
+        return IntStream.rangeClosed(1,x).filter(t->t%2==0).reduce(Math::addExact).getAsInt();
     }
     //TASK 03 --> Ilk x pozitif cift sayiyi toplayan program  create ediniz.
     public static int toplaIlkXCift(int x) {
 
-        return 0;
+        return IntStream.rangeClosed(1,x).filter(t->t%2==0).reduce(Math::addExact).getAsInt();
     }
     //TODO TASK 04 --> Ilk X pozitif tek tamsayiyi toplayan programi  create ediniz.
     public static int toplaIlkXTek(int x) {
 
-        return 0;
+        return IntStream.rangeClosed(1,x).filter(t->t%2!=0).reduce(Math::addExact).getAsInt();
     }
     //TASK 05 --> 2'nin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
     public static void ikininIlkXKuvvetPrint(int x) {
-
+        IntStream.rangeClosed(1,x).mapToDouble(t->Math.pow(2,t)).forEach(t-> System.out.print(t+" "));
     }
     //TASK 06 --> Istenilen bir sayinin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
     public static void isteneSayiIlkXKuvvetPrint(int istenenSayi,int x) {
-
+        System.out.println("Istenen sayinin ilk X kuvveti  ; made by Mevlut");
+        IntStream.rangeClosed(1, x).mapToDouble(t -> Math.pow(istenenSayi, t)).forEach(System.out::println);
     }
     // TODO TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi  create ediniz.
     public static int istenenSayiFactorial(int x) {
 
-        return 0;
+        return IntStream.rangeClosed(1,x).reduce(Math::multiplyExact).getAsInt();
     }
 
     //TASK 08 --> Istenilen bir sayinin  x. kuvvetini ekrana yazdiran programi  create ediniz.
